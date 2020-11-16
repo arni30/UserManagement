@@ -38,6 +38,25 @@ public class ModelController {
         model.addAttribute("Users", lst);
         return "redirect:/";
     }
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+    public String deleteUser(User user, ModelMap model) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.deleteUser(user.getId());
+        List<User> lst = userService.findAllUsers();
+        model.addAttribute("Users", lst);
+        return "redirect:/";
+    }
+    @RequestMapping(value = "/editUser", method = RequestMethod.POST)
+    public String edit(User user, ModelMap model) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = context.getBean("userService", UserService.class);
+        userService.updateUser(user);
+        List<User> lst = userService.findAllUsers();
+        model.addAttribute("Users", lst);
+        return "redirect:/";
+    }
+
 
     // -----------------------
     @RequestMapping(value = "/errors/404", method = RequestMethod.GET)
@@ -56,7 +75,6 @@ public class ModelController {
         UserService userService = context.getBean("userService", UserService.class);
 
         userService.saveUser(user);
-
 //        userService.updateUser(user);
         context.close();
     }

@@ -9,7 +9,7 @@
     <h1>hallo</h1>
     <dialog id="newUser">
         <div>
-            <form id="form" action="add" method="post">
+            <form id="newUserForm" action="add" method="post">
                 <input type="text" name="firstName" placeholder="first name">
                 <input type="text" name="lastName" placeholder="last name">
                 <input type="text" name="birthday" placeholder="date of birth">
@@ -20,9 +20,9 @@
                 <input type="submit" placeholder="Create">
             </form>
         </div>
-        <button id="close">Close</button>
+        <button id="closeNewUser">Close</button>
     </dialog>
-    <button id="show">Add user</button>
+    <button id="showNewUser">Add user</button>
     <table border="1">
         <c:forEach items="${Users}" var="user">
             <tr>
@@ -33,6 +33,28 @@
                 <td> Birthday: <c:out value="${user.birthday}"/></td>
                 <td> Address: <c:out value="${user.address}"/></td>
                 <td> About: <c:out value="${user.aboutYou}"/></td>
+                <td><form id="delete" method="post" action="deleteUser">
+                    <input style="display: none" type="text" name="id" value="${user.id}">
+                    <button type="submit">Delete</button>
+                    </form>
+                </td>
+                <td><button id="showEdit">Edit</button></td>
+                <dialog id="edit">
+                    <div>
+                        <form id="editForm" action="editUser" method="POST">
+                            <input style="display: none" type="text" name="id" value="${user.id}">
+                            <input type="text" name="firstName" id="firstName" placeholder="first name" value="${user.firstName}">
+                            <input type="text" name="lastName" id="lastName" placeholder="last name" value="${user.lastName}">
+                            <input type="text" name="birthday" id="birthday" placeholder="date of birth" value="${user.birthday}">
+                            <input type="text" name="login" id="login" placeholder="login" value="${user.login}">
+                            <input type="text" name="password" id="password" placeholder="password" value="${user.password}">
+                            <input type="text" name="aboutYou" id="about" placeholder="about you" value="${user.aboutYou}">
+                            <input type="text" name="address" id="address" placeholder="address" value="${user.address}">
+                            <input type="submit" placeholder="Confirm">
+                        </form>
+                    </div>
+                    <button id="closeEdit">Close</button>
+                </dialog>
             </tr>
         </c:forEach>
     </table>
@@ -43,12 +65,19 @@
 </html>
 
 <script type = text/javascript>
-    var dialog = document.getElementById('newUser');
-    document.getElementById('show').onclick = function() {
-        dialog.show();
+    let dialogNewUser = document.getElementById('newUser');
+    let dialogEdit = document.getElementById('edit');
+    document.getElementById('showNewUser').onclick = function() {
+        dialogNewUser.show();
     };
-    document.getElementById('close').onclick = function() {
-        dialog.close();
+    document.getElementById('closeNewUser').onclick = function() {
+        dialogNewUser.close();
+    };
+    document.getElementById('showEdit').onclick = function() {
+        dialogEdit.show();
+    };
+    document.getElementById('closeEdit').onclick = function() {
+        dialogEdit.close();
     };
 </script>
 

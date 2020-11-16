@@ -25,12 +25,14 @@ public class UserDao {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
         session.update(user);
+        System.out.println(user.getId());
         tx1.commit();
         session.close();
     }
 
-    public void delete(User user) {
+    public void delete(int id) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        User user = session.get(User.class, id);
         Transaction tx1 = session.beginTransaction();
         session.delete(user);
         tx1.commit();

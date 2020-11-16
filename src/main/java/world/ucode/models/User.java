@@ -25,6 +25,10 @@ public class User {
     @Column(name = "address")
     private String address;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -52,6 +56,10 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
