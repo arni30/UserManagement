@@ -1,6 +1,8 @@
 package world.ucode.models;
 
-import org.springframework.web.bind.annotation.RequestParam;
+
+
+import jakarta.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,20 +12,43 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotEmpty
     @Column(name = "firstName")
     private String firstName;
+    @NotEmpty
     @Column(name = "lastName")
     private String lastName;
     @Column(name = "birthday")
+    @NotEmpty
     private String birthday;
     @Column(name = "login")
+    @NotEmpty
     private String login;
     @Column(name = "password")
+    @NotEmpty
     private String password;
     @Column(name = "aboutYou")
+    @NotEmpty
     private String aboutYou;
     @Column(name = "address")
+    @NotEmpty
     private String address;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private int id;
+//    @Column(nullable = false, name = "firstName")
+//    private String firstName;
+//    @Column(nullable = false, name = "lastName")
+//    private String lastName;
+//    @Column(nullable = false, name = "birthday")
+//    private String birthday;
+//    @Column(nullable = false, name = "login")
+//    private String login;
+//    @Column(nullable = false, name = "password")
+//    private String password;
+//    @Column(nullable = false, name = "aboutYou")
+//    private String aboutYou;
+//    @Column(nullable = false, name = "address")
 
     public void setId(int id) {
         this.id = id;

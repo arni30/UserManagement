@@ -1,0 +1,77 @@
+html, body * { box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+body {
+    background:
+            -webkit-linear-gradient(
+                    rgba(246,247,249,0.8),
+                    rgba(246,247,249,0.8)),
+            url(lead-bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.table-stats table th, .table-stats table td {
+    border: none;
+    border-bottom: 1px solid #e8e9ef;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    padding: .75em 1.25em;
+    text-transform: uppercase;
+}
+.order-table tr th {
+    background: #e8e9ef;
+}
+table {
+    background-color: blanchedalmond;
+}
+button {
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    color: black;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+button:hover {
+    border-radius: 5px;
+    background-color: darkgray;
+    border-color: #e8e9ef;
+}
+.box-title {
+    float: bottom;
+}
+#delete {
+    margin: 0;
+}
+#showNewUser {
+    margin-top: .75em;
+}
+form span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 39px;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 45px;
+}
+form div {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #adadad;
+}
+form div input {
+    height: 2em;
+    outline: none;
+    border: none;
+    display: block;
+    width: 100%;
+    font-family: "Al Bayan";
+    font-size: 15px;
+    color: #555;
+    line-height: 1.2;
+}

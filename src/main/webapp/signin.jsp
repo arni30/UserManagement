@@ -9,8 +9,6 @@
 <%--    <meta name="author" content="Tetiana Rohalska">--%>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Login</title>
-    <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="resources/favicon.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
