@@ -16,9 +16,9 @@ Client-side works correctly with Google Chrome web browser.
 
 ## Running  the application
 1. Start MySQL server: <br>
-   #####MacOS
+   MacOS
    `mysql.server start`
-   #####Ubuntu
+   Ubuntu
    `service mysql start`
 2. In `hibernate.cfg.xml` change this fields: <br>
      `<property name="hibernate.connection.username">Your_Username_from_MySQL</property>`<br>
