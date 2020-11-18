@@ -49,10 +49,10 @@ button:hover {
 #delete {
     margin: 0;
 }
-#showNewUser {
+#showNewUser, #closeEdit {
     margin-top: .75em;
 }
-form span {
+.headerDialog {
     display: block;
     font-family: 'Montserrat', sans-serif;
     font-size: 39px;
@@ -60,18 +60,23 @@ form span {
     text-align: center;
     padding-bottom: 45px;
 }
-form div {
+.inputDiv {
     margin-bottom: 10px;
     border-bottom: 2px solid #adadad;
 }
-form div input {
+.input {
     height: 2em;
     outline: none;
     border: none;
     display: block;
     width: 100%;
-    font-family: "Al Bayan";
+    font-family: "Apple Chancery";
     font-size: 15px;
     color: #555;
     line-height: 1.2;
+}
+textarea {
+    font-family: "Apple Chancery";
+    font-size: 15px;
+    border: none;
 }

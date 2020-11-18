@@ -8,7 +8,7 @@
   <artifactId>management</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>ubay Maven Webapp</name>
+  <name>User management Maven Webapp</name>
 <!--  <url>http://www.example.com</url>-->
 
   <properties>
